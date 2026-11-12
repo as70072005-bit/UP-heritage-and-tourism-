@@ -1,0 +1,809 @@
+/* =====================================
+   UP HERITAGE & TOURISM WEBSITE
+   Main stylesheet
+===================================== */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --green: #173f35;
+    --dark-green: #102d26;
+    --gold: #c69b48;
+    --cream: #faf7ef;
+    --white: #ffffff;
+    --text: #333333;
+    --muted: #777777;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+/* NAVIGATION BAR */
+
+.navbar {
+    width: 100%;
+    min-height: 76px;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--dark-green);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+.navbar nav a {
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: var(--gold);
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    padding: 80px 9%;
+    color: white;
+    background:
+        linear-gradient(90deg, rgba(8,32,27,0.92), rgba(8,32,27,0.35)),
+        url('https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1800')
+        center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 680px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.13;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero-content > p:not(.eyebrow) {
+    font-size: 16px;
+    max-width: 580px;
+    color: #eeeeee;
+    margin-bottom: 32px;
+}
+
+/* BUTTONS */
+
+.primary-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark-green);
+    padding: 13px 25px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary-btn:hover {
+    background: #e2bd76;
+    transform: translateY(-3px);
+}
+
+/* GENERAL SECTIONS */
+
+.section-padding {
+    padding: 90px 8%;
+}
+
+.light-section {
+    background: #f0ebdf;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 48px;
+}
+
+.section-heading h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    color: var(--green);
+    margin-bottom: 12px;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+}
+
+/* INTRODUCTION */
+
+.intro {
+    text-align: center;
+}
+
+.intro-text {
+    max-width: 850px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+    color: #666;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.stat-card {
+    padding: 28px 15px;
+    background: white;
+    border-radius: 8px;
+    border-bottom: 3px solid var(--gold);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.stat-card h3 {
+    color: var(--green);
+    font-size: 29px;
+    margin-bottom: 5px;
+}
+
+.stat-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* MONUMENTS AND CUISINE CARDS */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.heritage-card {
+    background: white;
+    border-radius: 9px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
+
+.heritage-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.heritage-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+.heritage-card:hover img {
+    transform: scale(1.03);
+}
+
+.card-content {
+    padding: 23px;
+}
+
+.tag {
+    display: inline-block;
+    color: var(--green);
+    background: #e8efe9;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card-content h3 {
+    font-size: 23px;
+    color: var(--green);
+    margin-bottom: 9px;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* FESTIVAL CARDS */
+
+.festival-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.festival-card {
+    background: white;
+    padding: 30px;
+    border-radius: 9px;
+    border-left: 4px solid var(--gold);
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.festival-card:hover {
+    transform: translateY(-5px);
+}
+
+.festival-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.festival-card h3 {
+    color: var(--green);
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.festival-card p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.festival-card span {
+    color: #a47b34;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* FESTIVAL CALENDAR */
+
+.calendar-box {
+    max-width: 650px;
+    margin: 45px auto 0;
+    background: var(--dark-green);
+    color: white;
+    text-align: center;
+    padding: 35px;
+    border-radius: 10px;
+}
+
+.calendar-box h3 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.calendar-box select {
+    width: 100%;
+    max-width: 350px;
+    padding: 12px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 5px;
+    background: white;
+    color: var(--text);
+}
+
+.result-text {
+    color: #f3d89d;
+    font-size: 14px;
+    min-height: 25px;
+}
+
+/* ART AND CULTURE */
+
+.culture-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-bottom: 45px;
+}
+
+.culture-layout > div {
+    background: white;
+    padding: 28px;
+    border-radius: 8px;
+    border-bottom: 3px solid var(--gold);
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+}
+
+.culture-layout h3 {
+    color: var(--green);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.culture-layout p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* IMAGE SLIDER */
+
+.slider {
+    height: 430px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #222;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.6));
+    pointer-events: none;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    border: none;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.slider-btn:hover {
+    background: var(--gold);
+    color: var(--dark-green);
+}
+
+.prev {
+    left: 18px;
+}
+
+.next {
+    right: 18px;
+}
+
+#slideCaption {
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 2;
+}
+
+/* DESTINATION MAP */
+
+.map-layout {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.map-placeholder {
+    min-height: 350px;
+    border-radius: 10px;
+    padding: 35px;
+    background:
+        linear-gradient(rgba(20,62,50,0.88), rgba(20,62,50,0.88)),
+        url('https://images.unsplash.com/photo-1564507592333-c60657eea523?w=900')
+        center/cover;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 15px;
+    color: white;
+}
+
+.map-placeholder > p {
+    width: 100%;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.map-pin {
+    padding: 10px 17px;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.map-pin:hover {
+    background: var(--gold);
+    color: var(--dark-green);
+}
+
+.map-info {
+    padding: 30px;
+    background: white;
+    border-radius: 9px;
+    min-height: 180px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.map-info h3 {
+    color: var(--green);
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+/* QUIZ */
+
+.quiz-section {
+    background: #e9e3d5;
+}
+
+.quiz-box {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+#questionNumber {
+    color: #a47b34;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+#questionText {
+    font-size: 23px;
+    color: var(--green);
+    margin-bottom: 25px;
+}
+
+.answer-options {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.answer-options button {
+    padding: 13px;
+    background: #f5f3ed;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.answer-options button:hover:not(:disabled) {
+    background: #e5eddf;
+    border-color: var(--green);
+}
+
+.answer-options button:disabled {
+    cursor: default;
+}
+
+.answer-options button.correct {
+    background: #d8eedb;
+    border-color: #39844a;
+}
+
+.answer-options button.wrong {
+    background: #f8dddd;
+    border-color: #c44;
+}
+
+#quizFeedback {
+    min-height: 25px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#nextQuestion:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#quizScore {
+    color: var(--green);
+    margin-top: 20px;
+}
+
+/* TRAVEL CHECKLIST */
+
+.checklist-box {
+    max-width: 600px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+}
+
+.checklist-box h3 {
+    color: var(--green);
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.checklist-box label {
+    display: block;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.checklist-box input {
+    accent-color: var(--green);
+    margin-right: 12px;
+}
+
+#checklistProgress {
+    margin-top: 20px;
+    color: #a47b34;
+    font-weight: 700;
+}
+
+/* CONTACT */
+
+.contact-section {
+    background: var(--dark-green);
+    color: white;
+}
+
+.contact-section .section-heading h2 {
+    color: white;
+}
+
+.contact-section .section-heading > p:last-child {
+    color: #cccccc;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    display: grid;
+    gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    color: var(--text);
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--gold);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    justify-self: start;
+}
+
+#formMessage {
+    color: #f3d89d;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    background: #091e19;
+    color: #ccc;
+    padding: 35px 15px;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+footer .copyright {
+    color: #888;
+    margin-top: 18px;
+}
+
+/* BACK TO TOP */
+
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--dark-green);
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .navbar nav a {
+        font-size: 11px;
+    }
+
+    .section-padding {
+        padding: 70px 6%;
+    }
+}
+
+@media (max-width: 700px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .navbar nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0 10px;
+        gap: 15px;
+    }
+
+    .navbar nav.active {
+        display: flex;
+    }
+
+    .navbar nav a {
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 550px;
+        padding: 65px 7%;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .stats-grid,
+    .card-grid,
+    .festival-grid,
+    .culture-layout,
+    .map-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .heritage-card img {
+        height: 230px;
+    }
+
+    .slider {
+        height: 280px;
+    }
+
+    .quiz-box,
+    .checklist-box,
+    .calendar-box {
+        padding: 25px 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .section-padding {
+        padding: 55px 5%;
+    }
+
+    .map-placeholder {
+        padding: 20px;
+    }
+}
